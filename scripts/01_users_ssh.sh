@@ -48,7 +48,7 @@ grant_sudo
 setup_ssh_key() {
 
 	mkdir -p "/home/$NEW_USER/.ssh"
-	PUBKEY=$(cat /home/redman/.ssh/authorized_keys)
+	PUBKEY=$(cat "/home/$SUDO_USER/.ssh/authorized_keys")
 	echo "$PUBKEY" > "/home/$NEW_USER/.ssh/authorized_keys"
 	chmod 700 "/home/$NEW_USER/.ssh"
 	chmod 600 "/home/$NEW_USER/.ssh/authorized_keys"

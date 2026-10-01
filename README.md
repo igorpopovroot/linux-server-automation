@@ -31,10 +31,6 @@ sudo bash scripts/01_users_ssh.sh
 sudo bash scripts/02_lvm_setup.sh
 ```
 
-## Known limitations
-
-- `01_users_ssh.sh` copies the SSH public key from `/home/redman/.ssh/authorized_keys` (hardcoded — to be made configurable).
-
 ## Roadmap
 
 - [x] Users and SSH hardening
