@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### Strict mode.
+
 set -euo pipefail
 
 ### Creating users, modifying access rights, and SSH configuration/security ###

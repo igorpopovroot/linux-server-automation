@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### Strict mode.
+
 set -euo pipefail
 
 ### Variables: group_name, logical_volume_name.
