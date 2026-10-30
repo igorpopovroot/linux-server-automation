@@ -12,6 +12,8 @@ if [[ "$EUID" -ne 0 ]]; then
 fi
 
 ### Variables
+KEEP_DAYS=7
+
 ## What we are backup? (nginx.conf/site)
 BACKUP_SRC="/etc/nginx /var/www/html"
 
@@ -28,7 +30,6 @@ create_backup() {
 mkdir -p "$BACKUP_DST"
 tar -czf "$ARCHIVE" $BACKUP_SRC
 echo "Backup $ARCHIVE created"
-
 
 }
 
@@ -71,4 +72,13 @@ archive_contents
 
 
 
+### func: rotate backups
+
+rotate_backups() {
+	echo "Archives older than $KEEP_DAYS days:"
+	find "$BACKUP_DST" -type f -name "backup_*.tar.gz" -mtime +"$KEEP_DAYS"
+
+}
+
+rotate_backups
 
