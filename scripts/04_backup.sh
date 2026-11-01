@@ -75,9 +75,8 @@ archive_contents
 ### func: rotate backups
 
 rotate_backups() {
-	echo "Archives older than $KEEP_DAYS days:"
-	find "$BACKUP_DST" -type f -name "backup_*.tar.gz" -mtime +"$KEEP_DAYS"
-
+    echo "Archives older than $KEEP_DAYS days will be deleted"
+    find "$BACKUP_DST" -type f -name "backup_*.tar.gz" -mtime +"$KEEP_DAYS" -delete -print
 }
 
 rotate_backups
