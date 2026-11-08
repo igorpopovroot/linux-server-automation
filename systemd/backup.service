@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup nginx config and website files
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/redman/linux-server-automation/scripts/04_backup.sh
